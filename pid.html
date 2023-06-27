@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>pixiv画师档案</title>
+<link rel="shortcut icon" href="icon/p.ico">
+<link rel="stylesheet" href="css/pid.css">
+</head>
+<body>
+<table id="tp">
+<thead><tr><th>pid</th><th>昵称</th><th>tag</th><th>评分</th><td>操作</td></tr></thead>
+<tbody id="opt"></tbody>
+<tfoot id='bt'>
+  <tr>
+    <td><input id='iid' type='number' step='1'></td>
+	<td><input id='in'></td>
+	<td><input id='it'></td>
+	<td><button onclick="add()">添加</button></td>
+  </tr>
+</tfoot>
+</table>
+<div id='set'>
+	<div id='setlb'></div>
+	<table>
+		<tr><td></td><td>显示</td><td>隐藏</td></tr>
+		<tr><td>non-h</td>
+		<td><input type='radio' name='hnh' onclick="hid('nonh',true)" checked></td>
+		<td><input type='radio' name='hnh' onclick="hid('nonh',false)"></td></tr>
+		<tr><td>停更</td>
+		<td><input type='radio' name='hpus' onclick="hid('pause',true)" checked></td>
+		<td><input type='radio' name='hpus' onclick="hid('pause',false)"></td></tr>
+		<tr><td>已注销</td>
+		<td><input type='radio' name='hdld' onclick="hid('deleted',true)" checked></td>
+		<td><input type='radio' name='hdld' onclick="hid('deleted',false)"></td></tr>
+	</table>
+</div>
+<div id='pn'>
+	<div id='avt'><div id='as'>
+	<label class='ao'><input type='radio' name='avt' value='false'>无</label>
+	<label class='ao'><input type='radio' name='avt' value='jpg'>jpg</label>
+	<label class='ao'><input type='radio' name='avt' value='png'>png</label>
+	<label class='ao'><input type='radio' name='avt' value='gif'>gif</label>
+	</div></div>
+	<div class='dti'>pid: <span id='pid'></span></div>
+	<div class='dti'>昵称:<input id='cn' class='name'></div>
+	<div class='dti'>别名:<input id='cb'></div>
+	<div class='dti'>tag:<input id='ct'></div>
+	<div class='dti'>评分:<input id='cs' type='number' min='1' max='6'><sub>*1~6</sub></div>
+	<div class='chk'><input type="checkbox" id='nh'>non-h</div>
+	<div class='chk'><input type="checkbox" id='pus'>停更</div>
+	<div class='chk'><input type="checkbox" id='dld'>已注销</div>
+	<div>备注：<br/><textarea id='ps'></textarea></div>
+	<button onclick="sav()">保存</button>
+	<button onclick="dlt(ed)">移除</button>
+</div>
+<div id='flt'>保存成功 <img src="icon/tick.svg" align="top"></div>
+<div id='nv'><a class='nvb' href='#tp'><a id='loc' class='nvb' href='#0'></a><a class='nvb' href='#bt' style="transform:rotate(180deg)"></a></div>
+<script src="js/pid.js"></script>
+</body>
+</html>
